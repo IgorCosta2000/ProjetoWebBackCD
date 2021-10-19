@@ -2,11 +2,10 @@ const express =require('express');
 
 const servidor = express();
 
-servidor.get('/api',(req,res)=> {
-    res.send('VOCÊ ESTA NO CAMPINHO DIGITAL!')
+servidor.use(express.json());
 
-});
+const TaskRouters = require('./routes/TaskRoute');
 
-
+servidor.use('/task',TaskRouters)
 
 servidor.listen(3000)
