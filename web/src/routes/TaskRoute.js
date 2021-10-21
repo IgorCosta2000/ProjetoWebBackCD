@@ -3,6 +3,6 @@ const router = express.Router();
 
 const TaskController = require('../controller/TaskController');
 
-Router.post('/task',TaskController.create);
+router.post('/',TaskController.create);
 
 module.exports = router;

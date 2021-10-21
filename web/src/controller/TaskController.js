@@ -1,4 +1,4 @@
-const TaskModel = require('../model/TaskModel')
+const TaskModel = require('../model/TaskModel');
 
 //A controller faz o tráfego,recebendo e enviando respostas 
 class TaskController{
