@@ -18,8 +18,35 @@ class TaskController{
     
     
     }
+    async create(req,res){
+        //recebe a requisição do front
+        const task = new TaskModel(req.body)
+        //salva no banco de dados
+        await task
+        .save()//metodo utilizado para salvar dados que vem do front no banco de dados
+        .then(response => {return res.status(200).json(response)})
+        .catch(error => {return res.status(500).json(error)});
+    
+    
+    
+    
+    
+    }
+    async update(req,res){
+        
+       await TaskModel.findByIdAndUpdate({'_id' : req.params.id} ,req.body, {new:true})
+        .then(response => {return res.status(200).json(response)})
+        .catch(error => {return res.status(500).json(error)});
+    
+    
+    
+    
+    
+    }
+       
 
        }
+       
 
 module.exports = new TaskController();
 //save()metodo utilizado para salvar dados que vem do front no banco de dados
